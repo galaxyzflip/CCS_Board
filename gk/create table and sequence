@@ -1,0 +1,29 @@
+--게시판 테이블 생성
+create table board_tbl(
+
+    id number primary key,
+    title varchar2(100),
+    content varchar2(1000),
+    reg_date date default sysdate
+
+);
+
+--단어 저장 테이블 생성
+create table related_tbl(
+
+    rec_key number primary key,
+    id number,
+    word varchar2(100),
+    count number default 0,
+    percent number default 0,
+    edit_date date default sysdate
+
+);
+
+--시퀀스 생성
+
+create SEQUENCE ID_SEQ
+increment by 1;
+
+create SEQUENCE rec_key_seq
+increment by 1;
